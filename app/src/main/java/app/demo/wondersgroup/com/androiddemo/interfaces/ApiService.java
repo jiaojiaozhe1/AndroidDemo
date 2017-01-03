@@ -65,4 +65,7 @@ public interface ApiService {
     @GET("smile_mobile/showAccountInfo.do")
     Call<JsonObject> getUserInfo(@Query("inputStr") String param);
 
+    @GET("smile/initIndex.do")
+    Call<JsonObject> getInitIndex(@Query("inputStr") String param);
+
 }

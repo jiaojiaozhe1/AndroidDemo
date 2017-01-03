@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <paths xmlns:androdi="http://schemas.android.com/apk/res/android">
+
+    <!--指定了要分享给其他应用使用的文件是 当前应用缓存目录下的-->
+    <!--<external-path name="my_images" path="Android/data/app.demo.wondersgroup.com.mediademo/cache"/>-->
+
+    <!--第一个参数随便写,第二个参数是 对那个目录下面的文件进行分装呢,如果什么都不写就代表是sd 卡下面-->
+    <external-path name="my_images" path=""/>
+</paths>

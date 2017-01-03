@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.demo.wondersgroup.com.materialdesigndemo">
+
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- label 用来修改toolbar 上面的显示文字,如果不指定具体显示文字那么就显示 application 中label 值 -->
+        <activity
+            android:name=".MainActivity"
+            android:label="toolbar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 当5.0以上系统 执行 V21 里面的 主题代码,这样系统状态拦不显示 -->
+        <activity
+            android:name=".FruitActivity"
+            android:theme="@style/FruitActivityTheme" />
+        <activity android:name=".FruitViewActivity" />
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".NewsContentActivity" />
+        <activity android:name=".MenuActivity"></activity>
+    </application>
+
+</manifest>

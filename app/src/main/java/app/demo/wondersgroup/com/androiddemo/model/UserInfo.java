@@ -28,7 +28,7 @@ public class UserInfo {
     }
 
     public String getNickname() {
-        return nickname;
+        return nickname == null ? "内容为空" : nickname;
     }
 
     public void setNickname(String nickname) {

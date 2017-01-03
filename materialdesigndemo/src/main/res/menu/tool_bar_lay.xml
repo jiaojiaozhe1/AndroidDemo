@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--app 命名空间是为了使得低版本能适配,-->
+    <item
+        android:id="@+id/delete"
+        android:icon="@mipmap/ic_launcher"
+        android:title="delete"
+        app:showAsAction="always" />
+    <!--always 是显示在action 上面当没有空间就不显示-->
+    <item
+        android:id="@+id/backup"
+        android:icon="@mipmap/ic_launcher"
+        android:title="backup"
+        app:showAsAction="ifRoom" />
+    <!--ifRoom 如果有空间就显示 没有空间就不显示 并且只显示图片不显示文字-->
+    <item
+        android:id="@+id/setting"
+        android:icon="@mipmap/ic_launcher"
+        android:title="setting"
+        app:showAsAction="never" />
+    <!--不用显示到action 上面 而是显示到菜单上面  只显示文字不显示图标-->
+
+</menu>

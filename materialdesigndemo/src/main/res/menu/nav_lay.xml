@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--使用group 是item 是同一个组的 singel 是每个item 是单选方式-->
+    <group
+        android:id="@+id/nav_group"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/call"
+            android:icon="@mipmap/date"
+            android:title="日期" />
+<item
+            android:id="@+id/ic_img"
+            android:icon="@mipmap/ic_launcher"
+            android:title="机器人" />
+<item
+            android:id="@+id/date"
+            android:icon="@mipmap/date"
+            android:title="日期111" />
+
+
+    </group>
+
+</menu>
