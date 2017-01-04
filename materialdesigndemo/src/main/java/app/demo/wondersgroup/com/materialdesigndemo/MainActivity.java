@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,16 +26,18 @@ import java.util.Random;
 
 import app.demo.wondersgroup.com.materialdesigndemo.adapter.FruitAdapter;
 import app.demo.wondersgroup.com.materialdesigndemo.model.Fruit;
+import app.demo.wondersgroup.com.materialdesigndemo.utils.ActivityController;
 
 /**
  * 结合materialDesign 实现简单的效果
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private FloatingActionButton floatingActionButton;
     private RecyclerView recyclerView;
+    private ImageView settingImg;
     private SwipeRefreshLayout swipeRefreshLayout;
     private Fruit[] fruits = {new Fruit("陕西冰糖心红富士", R.mipmap.muli_fruit),
             new Fruit("陕西红富士", R.mipmap.sum),
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         initData();
         initView();
+        initListener();
 
 
 //        ActionBar supportActionBar = getSupportActionBar();
@@ -69,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+    }
 
+    private void initListener() {
         //navigationView 操作
         navigationView.setCheckedItem(R.id.call);//默认选中menu中第一个item
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -82,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        settingImg.setOnClickListener(this);
     }
 
     private void initData() {
@@ -99,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
         floatingActionButton = (FloatingActionButton) findViewById(R.id.floating_action_btn);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+
+        //获取navigationView 中头布局的组件
+        settingImg = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.home_setting);
+
         setSupportActionBar(toolbar);
 
         //这里会看到snackBar 弹出来会盖住 floatingActionBar 那么怎么办呢 需要加入CoordinatorLayout 它的作用和
@@ -177,5 +188,12 @@ public class MainActivity extends AppCompatActivity {
 //                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == settingImg) {
+            ActivityController.finishAllActivities();
+        }
     }
 }

@@ -12,7 +12,7 @@ import android.util.Log;
 
 import app.demo.wondersgroup.com.materialdesigndemo.fragment.NewsContentFragment;
 
-public class NewsContentActivity extends AppCompatActivity {
+public class NewsContentActivity extends BaseActivity {
 
 
     public static void startAction(Context context, String content) {

@@ -18,7 +18,7 @@ import app.demo.wondersgroup.com.materialdesigndemo.model.Fruit;
 /**
  * recyclerView 瀑布式布局使用
  */
-public class FruitViewActivity extends AppCompatActivity {
+public class FruitViewActivity extends BaseActivity {
     private SwipeRefreshLayout refreshLayout;
     private RecyclerView recyclerView;
     private FruitAdapter adapter;

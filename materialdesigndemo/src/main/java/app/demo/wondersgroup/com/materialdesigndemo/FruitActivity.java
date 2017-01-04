@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import static android.support.design.R.styleable.CollapsingToolbarLayout;
 import static app.demo.wondersgroup.com.materialdesigndemo.R.styleable.Toolbar;
 
-public class FruitActivity extends AppCompatActivity {
+public class FruitActivity extends BaseActivity {
     private String fruitName;
     private int imgId;
 
