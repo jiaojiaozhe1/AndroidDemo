@@ -30,7 +30,27 @@
         <activity android:name=".FruitViewActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".NewsContentActivity" />
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".MenuActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.menu.activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"></action>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </receiver>
+
+        <activity android:name=".SendBroadActivity"></activity>
     </application>
 
 </manifest>

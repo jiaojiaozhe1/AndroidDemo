@@ -175,10 +175,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.backup:
+                //显示启动活动
                 startActivity(new Intent(this, FruitViewActivity.class));
                 break;
             case R.id.delete:
-                startActivity(new Intent(this, MenuActivity.class));
+                //隐式启动活动
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.menu.activity");
+                startActivity(intent);
                 break;
             case R.id.setting:
                 Toast.makeText(this, "setting....", Toast.LENGTH_LONG).show();
