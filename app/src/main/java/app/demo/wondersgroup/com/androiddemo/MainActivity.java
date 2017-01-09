@@ -53,6 +53,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * retrofit 使用,通知使用
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button infoBtn;
     private Button jsonInfoBtn;
@@ -151,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("user", user);
             startActivity(intent);
         } else if (notifyBtn == view) {
+
             Intent intent = new Intent(this,SecondActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
@@ -173,7 +178,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             notificationManager.notify(1, notification);// 第一个参数是通知id
 //            notificationManager.cancel(1);//  参数是要关闭的通知id
-
         }
     }
 

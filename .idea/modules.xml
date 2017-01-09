@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/materialdesigndemo/materialdesigndemo.iml" filepath="$PROJECT_DIR$/materialdesigndemo/materialdesigndemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mediademo/mediademo.iml" filepath="$PROJECT_DIR$/mediademo/mediademo.iml" />
       <module fileurl="file://$PROJECT_DIR$/netstatechange/netstatechange.iml" filepath="$PROJECT_DIR$/netstatechange/netstatechange.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servicedemo/servicedemo.iml" filepath="$PROJECT_DIR$/servicedemo/servicedemo.iml" />
     </modules>
   </component>
 </project>

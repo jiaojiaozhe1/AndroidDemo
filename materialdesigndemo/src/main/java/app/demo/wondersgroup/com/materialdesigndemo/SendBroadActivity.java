@@ -28,7 +28,7 @@ public class SendBroadActivity extends AppCompatActivity {
 
     private void initData() {
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("com.wondersgroup.send.normal.broadcast");
+        intentFilter.addAction("com.wondersgroup.send.normal.broadcast");//接受的广播
         normalBroadReceiver = new NormalBroadReceiver();
         registerReceiver(normalBroadReceiver, intentFilter);
 
@@ -47,7 +47,7 @@ public class SendBroadActivity extends AppCompatActivity {
         sendBroad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent("com.wondersgroup.send.normal.broadcast");
+                Intent intent = new Intent("com.wondersgroup.send.normal.broadcast");//发送的广播
                 sendBroadcast(intent);
             }
         });
