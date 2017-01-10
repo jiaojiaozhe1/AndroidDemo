@@ -1,1 +1,1 @@
-include ':app', ':IoFiledemo', ':netstatechange', ':mediademo', ':materialdesigndemo', ':servicedemo'
+include ':app', ':IoFiledemo', ':netstatechange', ':mediademo', ':materialdesigndemo', ':servicedemo', ':umengdemo', ':umengdemo2', 'common_utils'

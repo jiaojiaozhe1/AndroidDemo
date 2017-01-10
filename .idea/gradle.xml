@@ -11,10 +11,13 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/IoFiledemo" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/common_utils" />
             <option value="$PROJECT_DIR$/materialdesigndemo" />
             <option value="$PROJECT_DIR$/mediademo" />
             <option value="$PROJECT_DIR$/netstatechange" />
             <option value="$PROJECT_DIR$/servicedemo" />
+            <option value="$PROJECT_DIR$/umengdemo" />
+            <option value="$PROJECT_DIR$/umengdemo2" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

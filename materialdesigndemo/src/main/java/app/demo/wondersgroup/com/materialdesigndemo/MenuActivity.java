@@ -27,6 +27,9 @@ public class MenuActivity extends BaseActivity {
     private void initView() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.menu_tool_bar);
         toolbar.setTitle("menu");
+
+        toolbar.setSubtitle("subMenu");
+        toolbar.setTitleMarginStart(10);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){

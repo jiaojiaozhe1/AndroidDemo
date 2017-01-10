@@ -10,16 +10,21 @@
             android:id="@+id/call"
             android:icon="@mipmap/date"
             android:title="日期" />
-<item
+        <item
             android:id="@+id/ic_img"
             android:icon="@mipmap/ic_launcher"
             android:title="机器人" />
-<item
+        <item
             android:id="@+id/date"
             android:icon="@mipmap/date"
             android:title="日期111" />
 
 
     </group>
+
+    <item
+        android:icon="@mipmap/date"
+        android:title="日期111" />
+
 
 </menu>
