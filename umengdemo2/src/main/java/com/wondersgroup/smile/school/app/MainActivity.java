@@ -52,7 +52,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         image.setThumb(image);
 
         initListener();
-
     }
 
     private void initListener() {
