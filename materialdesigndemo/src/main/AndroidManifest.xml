@@ -14,14 +14,16 @@
 
         <!-- label 用来修改toolbar 上面的显示文字,如果不指定具体显示文字那么就显示 application 中label 值 -->
         <activity
-            android:name=".MainActivity"
-            android:label="toolbar">
+            android:name=".LoginActivity"
+            android:label="toolbar"
+            android:theme="@style/LoginActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
 
         <!-- 当5.0以上系统 执行 V21 里面的 主题代码,这样系统状态拦不显示 -->
         <activity
@@ -41,16 +43,16 @@
         <receiver
             android:name=".broadcast.MyReceiver"
             android:enabled="true"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"></action>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </receiver>
 
-        <activity android:name=".SendBroadActivity"></activity>
+        <activity android:name=".SendBroadActivity" />
+        <activity android:name=".VideoPlayerView"></activity>
     </application>
 
 </manifest>

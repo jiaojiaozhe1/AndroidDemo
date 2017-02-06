@@ -24,6 +24,17 @@
         android:layout_height="wrap_content"
         android:text="本地相册选择" />
 
+    <Button
+      android:id="@+id/video_view_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="视频播放" />
+ <Button
+      android:id="@+id/show_pdf_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在线查看pdf" />
+
     <ImageView
         android:id="@+id/content_img"
         android:layout_width="match_parent"

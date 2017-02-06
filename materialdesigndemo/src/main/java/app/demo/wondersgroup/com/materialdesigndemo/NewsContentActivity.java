@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
+import com.johnson.commonlibs.common_utils.BaseActivity;
+
 import app.demo.wondersgroup.com.materialdesigndemo.fragment.NewsContentFragment;
 
 public class NewsContentActivity extends BaseActivity {

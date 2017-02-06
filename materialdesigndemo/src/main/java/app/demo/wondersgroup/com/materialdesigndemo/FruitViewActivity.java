@@ -8,6 +8,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.johnson.commonlibs.common_utils.BaseActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

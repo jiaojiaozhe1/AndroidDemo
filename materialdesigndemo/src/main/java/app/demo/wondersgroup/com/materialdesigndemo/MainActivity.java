@@ -1,14 +1,16 @@
 package app.demo.wondersgroup.com.materialdesigndemo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,9 +18,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.johnson.commonlibs.common_utils.BaseActivity;
+import com.johnson.commonlibs.common_utils.utils.ActivityController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +31,6 @@ import java.util.Random;
 
 import app.demo.wondersgroup.com.materialdesigndemo.adapter.FruitAdapter;
 import app.demo.wondersgroup.com.materialdesigndemo.model.Fruit;
-import app.demo.wondersgroup.com.materialdesigndemo.utils.ActivityController;
 
 /**
  * 结合materialDesign 实现简单的效果
@@ -49,6 +53,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private List<Fruit> fruitList = new ArrayList<>();
     private FruitAdapter adapter;
+
+    public static void startAction(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +82,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+    }
+
+    /**
+     * 返回键关闭抽屉
+     */
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private void initListener() {
@@ -118,13 +140,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "要删除吗", Snackbar.LENGTH_SHORT).setAction("不同意", new View.OnClickListener() {
+                Snackbar snackbar = Snackbar.make(view, "要删除吗", Snackbar.LENGTH_SHORT).setAction("不同意", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
                         Toast.makeText(MainActivity.this, "保存了数据", Toast.LENGTH_LONG).show();
                     }
-                }).show();
+                }).setActionTextColor(Color.RED);
+                snackbar.show();
+
+//                setActionTextColor() 用来修改action 文字内容
+
+//                //改变Snackbar文本的颜色
+//                View barView = snackbar.getView();
+//                TextView textView = (TextView) barView.findViewById(android.support.design.R.id.snackbar_text);
+//                textView.setTextColor(Color.YELLOW);
+//                snackbar.show();
             }
         });
 
@@ -197,7 +228,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view == settingImg) {
-            ActivityController.finishAllActivities();
+//            ActivityController.finishAllActivities();
+//            LoginActivity.startLoginAction(this);
+            VideoPlayerView.startAction(this);
         }
     }
 }

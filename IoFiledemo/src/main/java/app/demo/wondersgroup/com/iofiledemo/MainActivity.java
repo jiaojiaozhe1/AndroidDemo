@@ -1,6 +1,7 @@
 package app.demo.wondersgroup.com.iofiledemo;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button readFile;
     private Button byteArrayBtn;
     private Button dataOptionBtn;
+    private Button fileDirecBtn;
 
     private String basePath;
     private File file;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         readFile.setOnClickListener(this);
         byteArrayBtn.setOnClickListener(this);
         dataOptionBtn.setOnClickListener(this);
+        fileDirecBtn.setOnClickListener(this);
     }
 
     private void initView() {
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         readFile = (Button) findViewById(R.id.read_file_btn);
         byteArrayBtn = (Button) findViewById(R.id.byte_array_file_btn);
         dataOptionBtn = (Button) findViewById(R.id.data_read_write_btn);
+        fileDirecBtn = (Button) findViewById(R.id.file_directory_btn);
 
     }
 
@@ -76,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             fileReadAndWrite();
 
+        } else if (view == fileDirecBtn){
+            startActivity(new Intent(this,LocalDirectoryActivity.class));
         }
     }
 

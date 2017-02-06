@@ -20,7 +20,6 @@ import java.net.URL;
  * @since 01/05/2015
  */
 public class ImageFileUtils {
-//    private static final Logger logger = LoggerFactory.getLogger(FileUtils.class.getSimpleName());
 
     private static File sdcard = Environment.getExternalStorageDirectory();
 

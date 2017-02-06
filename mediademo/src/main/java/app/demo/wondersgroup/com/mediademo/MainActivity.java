@@ -35,6 +35,8 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button captureImg;
     private Button phtotsImg;
+    private Button videoViewBtn;
+    private Button pdfShowBtn;
     private ImageView contentImg;
     private Uri uri;
     File imgFile;
@@ -62,11 +64,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initListener() {
         captureImg.setOnClickListener(this);
         phtotsImg.setOnClickListener(this);
+        videoViewBtn.setOnClickListener(this);
+        pdfShowBtn.setOnClickListener(this);
     }
 
     private void initView() {
         captureImg = (Button) findViewById(R.id.capture_img_btn);
         phtotsImg = (Button) findViewById(R.id.choose_photos_btn);
+        videoViewBtn = (Button) findViewById(R.id.video_view_btn);
+        pdfShowBtn = (Button) findViewById(R.id.show_pdf_btn);
         contentImg = (ImageView) findViewById(R.id.content_img);
     }
 
@@ -79,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view == phtotsImg) {
 //            choosePhoto();
             requestPermissionMedia();
+        } else if (view == videoViewBtn){
+            startActivity(new Intent(this,VideoViewActivity.class));
+        } else if(view == pdfShowBtn){
+            startActivity(new Intent(this,PdfShowActivity.class));
         }
     }
 

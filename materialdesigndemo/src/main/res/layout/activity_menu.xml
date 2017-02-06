@@ -24,7 +24,7 @@
                 android:textColor="#ffffff"
                 android:textSize="16sp"
                 android:layout_centerHorizontal="true"
-                android:text="标题"/>
+                android:text="视频播放"/>
 
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>

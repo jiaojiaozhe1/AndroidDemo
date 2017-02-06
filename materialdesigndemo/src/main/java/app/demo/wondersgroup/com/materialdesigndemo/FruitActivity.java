@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.johnson.commonlibs.common_utils.BaseActivity;
 
 import static android.support.design.R.styleable.CollapsingToolbarLayout;
 import static app.demo.wondersgroup.com.materialdesigndemo.R.styleable.Toolbar;

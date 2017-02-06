@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.johnson.commonlibs.common_utils.BaseActivity;
+
 public class MenuActivity extends BaseActivity {
 
     @Override
@@ -29,12 +31,12 @@ public class MenuActivity extends BaseActivity {
         toolbar.setTitle("menu");
 
         toolbar.setSubtitle("subMenu");
-        toolbar.setTitleMarginStart(10);
+//        toolbar.setTitleMarginStart(10);
         setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null){
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+//        ActionBar actionBar = getSupportActionBar();
+//        if (actionBar != null){
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//        }
 
     }
 
@@ -61,7 +63,7 @@ public class MenuActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_lay,menu);
+//        getMenuInflater().inflate(R.menu.menu_lay,menu);
         return true;//返回值为ture menu 是可见的并且meun 的其他功能起作用,返回值false menu 不可见并且不起作用
     }
 
