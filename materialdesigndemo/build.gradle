@@ -37,7 +37,7 @@ dependencies {
     compile 'com.android.support:support-v4:25.0.0'
     compile 'com.google.android.gms:play-services:9.8.0'
 
-    compile 'fm.jiecao:jiecaovideoplayer:5.3'
+    compile 'fm.jiecao:jiecaovideoplayer:5.3'// 使用JCVideoPlayer 第三方插件 实现播放 目前不太完整
     testCompile 'junit:junit:4.12'
     compile project (':common_utils')
 }
