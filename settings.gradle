@@ -1,2 +1,2 @@
 include ':app', ':IoFiledemo', ':netstatechange', ':mediademo', ':materialdesigndemo',
-        ':servicedemo', ':umengdemo', ':umengdemo2', 'common_utils' ,":vitamio"
+        ':servicedemo', ':umengdemo2', 'common_utils' ,":vitamio"

@@ -18,6 +18,7 @@ public class ActivityController {
     public static void removeActivity(Activity activity){
         activities.remove(activity);
     }
+
     public static void finishAllActivityes(){
         for (Activity activity:activities){
             if (!activity.isFinishing()){

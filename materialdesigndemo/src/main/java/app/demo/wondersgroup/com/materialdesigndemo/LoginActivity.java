@@ -22,6 +22,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     TextInputLayout userInputLay;
     @Bind(R.id.user_pwd_textinputlay)
     TextInputLayout pwdInputLay;
+    @Bind(R.id.text_input_content)
+    TextInputLayout contentTextlay;
     @Bind(R.id.login_btn)
     Button loginBtn;
 
@@ -32,6 +34,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
         ButterKnife.bind(this);
         initListener();
+//        contentTextlay.setError("输入内容不为空");
 
         userInputLay.getEditText().addTextChangedListener(new TextWatcher() {
             @Override

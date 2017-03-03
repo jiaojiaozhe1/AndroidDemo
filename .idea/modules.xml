@@ -10,7 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/mediademo/mediademo.iml" filepath="$PROJECT_DIR$/mediademo/mediademo.iml" />
       <module fileurl="file://$PROJECT_DIR$/netstatechange/netstatechange.iml" filepath="$PROJECT_DIR$/netstatechange/netstatechange.iml" />
       <module fileurl="file://$PROJECT_DIR$/servicedemo/servicedemo.iml" filepath="$PROJECT_DIR$/servicedemo/servicedemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/umengdemo/umengdemo.iml" filepath="$PROJECT_DIR$/umengdemo/umengdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/umengdemo2/umengdemo2.iml" filepath="$PROJECT_DIR$/umengdemo2/umengdemo2.iml" />
       <module fileurl="file://$PROJECT_DIR$/vitamio/vitamio.iml" filepath="$PROJECT_DIR$/vitamio/vitamio.iml" />
     </modules>

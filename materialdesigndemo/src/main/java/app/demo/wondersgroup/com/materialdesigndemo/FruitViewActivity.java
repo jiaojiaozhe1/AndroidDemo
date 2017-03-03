@@ -64,6 +64,7 @@ public class FruitViewActivity extends BaseActivity {
             }
             fruit.setName(stringBuilder.toString());
             furitList.add(fruit);
+
         }
     }
 
