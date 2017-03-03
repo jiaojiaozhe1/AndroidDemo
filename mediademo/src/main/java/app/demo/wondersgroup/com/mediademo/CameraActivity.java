@@ -15,6 +15,7 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -80,10 +81,18 @@ public class CameraActivity extends AppCompatActivity {
                     Log.e("Album", "我有权限啊");
                 }
 
+                Uri  uri = null;
+                // 7.0 中的处理
+                if (Build.VERSION.SDK_INT >= 24) {
+                    //FileProvider 将文件进行分装, 然后供外部应用（相机）访问提高了当前应用的安全性
+                    uri = FileProvider.getUriForFile(CameraActivity.this, "com.example.android.fileprovider", file);//通过FileProvider 来获取本地图片文件
+                } else {
+                    uri = Uri.fromFile(file);
+                }
                 // 来自相机
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 // 下面这句指定调用相机拍照后的照片存储的路径
-                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
                 startActivityForResult(cameraIntent, CAMERA_OK);// CAMERA_OK是用作判断返回结果的标识
             }
         });
@@ -97,6 +106,7 @@ public class CameraActivity extends AppCompatActivity {
             // 如果是直接从相册获取
 
             case ALBUM_OK:
+                //4.4 以上系统版本号
                 if (Build.VERSION.SDK_INT >= 19) {
                     String path = handleImageOnKitKat(data);
                     File file = new File(path);
@@ -112,6 +122,7 @@ public class CameraActivity extends AppCompatActivity {
                     startPhotoZoom(Uri.fromFile(file), ALBUM_OK);
 
                 } else {
+                    //4.4 之前版本号
                     String path = handleImageBeforeKitkat(data);
 
                     File file = new File(path);
@@ -146,7 +157,6 @@ public class CameraActivity extends AppCompatActivity {
 
     /**
      * 保存裁剪之后的图片数据 将图片设置到imageview中
-     *
      */
     private void setPicToView() {
 
@@ -199,11 +209,11 @@ public class CameraActivity extends AppCompatActivity {
          *   否则 需要做如下处理
          *
          *     if(type==CAMERA_OK)
-             {
-             intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-             }else {
-             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
-             }
+         {
+         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+         }else {
+         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+         }
          */
 
         pathUri = uri;
