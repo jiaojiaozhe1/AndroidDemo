@@ -1,2 +1,2 @@
-include ':app', ':IoFiledemo', ':netstatechange', ':mediademo', ':materialdesigndemo', ':circleprogress', ':popupwindow',
+include ':app', ':IoFiledemo', ':netstatechange', ':mediademo', ':materialdesigndemo', ':circleprogress', ':popupwindow', ':progressdialog',
         ':servicedemo', ':umengdemo2', 'common_utils', ":vitamio"
