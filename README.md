@@ -8,3 +8,5 @@ mediademo 中通过使用第三方库vitamio 来实现视频播放
 circleprogress 圆形的进度 可以带进度数 设置进度颜色
 
 popupwindow 基本的显示
+
+progressDialog 自定义样式
