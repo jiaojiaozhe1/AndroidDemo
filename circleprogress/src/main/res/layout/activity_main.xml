@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context="clonetrain.wondersgroup.com.circleprogress.MainActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/rectangle_course_bg"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/shape_circle" />
+
+                <clonetrain.wondersgroup.com.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress_course"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:donut_finished_color="#F6F6F6"
+                    app:donut_finished_stroke_width="6dp"
+                    app:donut_max="100"
+                    app:donut_prefix_text="@string/app_name"
+                    app:donut_progress="30"
+                    app:donut_text="30"
+                    app:donut_text_color="#ffffff"
+                    app:donut_text_size="20sp"
+                    app:donut_unfinished_color="#f494c0"
+                    app:donut_unfinished_stroke_width="5dp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:alpha="0.9"
+                android:text="我的课程"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/rectangle_test"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/shape_circle" />
+
+                <clonetrain.wondersgroup.com.circleprogress.DonutProgress
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:donut_finished_color="#F6F6F6"
+                    app:donut_finished_stroke_width="6dp"
+                    app:donut_max="100"
+                    app:donut_prefix_text="@string/app_name"
+                    app:donut_progress="60"
+                    app:donut_text="60"
+                    app:donut_text_color="#ffffff"
+                    app:donut_text_size="20sp"
+                    app:donut_unfinished_color="#90bae4"
+                    app:donut_unfinished_stroke_width="5dp" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:alpha="0.9"
+                android:text="我的课程"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/rectangle_plan_bg"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/shape_circle" />
+
+                <clonetrain.wondersgroup.com.circleprogress.DonutProgress
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:donut_finished_color="#F6F6F6"
+                    app:donut_finished_stroke_width="6dp"
+                    app:donut_max="100"
+                    app:donut_prefix_text="@string/app_name"
+                    app:donut_progress="80"
+                    app:donut_text="80"
+                    app:donut_text_color="#ffffff"
+                    app:donut_text_size="20sp"
+                    app:donut_unfinished_color="#d2b1e0"
+                    app:donut_unfinished_stroke_width="5dp" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:alpha="0.9"
+                android:text="我的课程"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
