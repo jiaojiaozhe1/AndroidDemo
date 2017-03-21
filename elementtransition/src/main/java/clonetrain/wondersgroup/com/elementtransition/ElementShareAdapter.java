@@ -61,6 +61,7 @@ public class ElementShareAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         @Override
         public void onClick(View v) {
+            //添加启动动画
             Intent intent = new Intent(mContext, SecondActivity.class);
 // Pass data object in the bundle and populate details activity.
             intent.putExtra("shared_element_transition_name", imageView.getTransitionName());

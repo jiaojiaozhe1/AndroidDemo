@@ -50,6 +50,7 @@ public class SecondActivity extends AppCompatActivity {
 //            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        }
 
+        //上个页面 imageview 和当前页面展示的imageview 具有相同transitionname
         String transitionName = getIntent().getStringExtra("shared_element_transition_name");
         if (!TextUtils.isEmpty(transitionName)) {
             ViewCompat.setTransitionName(ambImg, transitionName);
