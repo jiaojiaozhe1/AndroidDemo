@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "app.demo.wondersgroup.com.materialdesigndemo"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"

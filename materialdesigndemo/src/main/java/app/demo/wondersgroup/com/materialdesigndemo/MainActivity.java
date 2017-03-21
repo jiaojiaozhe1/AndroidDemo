@@ -18,12 +18,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.johnson.commonlibs.common_utils.BaseActivity;
 import com.johnson.commonlibs.common_utils.utils.ActivityController;
+import com.johnson.commonlibs.common_utils.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +45,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
     private ImageView settingImg;
     private SwipeRefreshLayout swipeRefreshLayout;
+
+    static final String EXTRA_STARTING_ALBUM_POSITION = "extra_starting_item_position";
+    static final String EXTRA_CURRENT_ALBUM_POSITION = "extra_current_item_position";
+
     private Fruit[] fruits = {new Fruit("陕西冰糖心红富士", R.mipmap.muli_fruit),
             new Fruit("陕西红富士", R.mipmap.sum),
             new Fruit("海南大香蕉", R.mipmap.autom),
@@ -173,8 +179,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 refreshRecyclerView();
             }
         });
+    }
 
+    /**
+     * 当返回的时候 拿到标记的recyclerview position 自动滚到到 上一次点击的位置
+     *
+     * @param requestCode
+     * @param data
+     */
+    @Override
+    public void onActivityReenter(int requestCode, Intent data) {
+        super.onActivityReenter(requestCode, data);
+        Bundle mTmpReenterState = new Bundle(data.getExtras());
+        int currentPosition = mTmpReenterState.getInt(EXTRA_CURRENT_ALBUM_POSITION);
+        recyclerView.scrollToPosition(currentPosition);
 
+        LogUtil.e("onActivityReenter", "onActivityReenter");
+//        postponeEnterTransition();
     }
 
     private void refreshRecyclerView() {
