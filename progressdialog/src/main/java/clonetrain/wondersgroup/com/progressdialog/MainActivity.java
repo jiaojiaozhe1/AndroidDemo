@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 // Set imageList
                 List<Integer> imageList = new ArrayList<Integer>();
-                imageList.add(R.mipmap.ic_launcher);
-                imageList.add(R.mipmap.ic_launcher);
+                imageList.add(R.mipmap.logo_shap);
+                imageList.add(R.mipmap.logo_shap);
 
 
                 FlipProgressDialog fpd = new FlipProgressDialog();
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 fpd.setDimAmount(0.0f);                                   // Set a dim (How much dark outside of dialog)
 
 // About dialog shape, color
-                fpd.setBackgroundColor(Color.parseColor("#FF4081"));      // Set a background color of dialog
+                fpd.setBackgroundColor(Color.parseColor("#6990E7"));      // Set a background color of dialog
                 fpd.setBackgroundAlpha(0.2f);                             // Set a alpha color of dialog
                 fpd.setBorderStroke(0);                                   // Set a width of border stroke of dialog
                 fpd.setBorderColor(-1);                                   // Set a border stroke color of dialog

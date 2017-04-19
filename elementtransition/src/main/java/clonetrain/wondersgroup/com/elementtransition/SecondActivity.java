@@ -9,8 +9,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.TransitionManager;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -32,9 +35,6 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//// set an exit transition
-//        getWindow().setExitTransition(new Explode());
         setContentView(R.layout.activity_details);
 
 

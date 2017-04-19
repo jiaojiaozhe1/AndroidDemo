@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     tools:context="clonetrain.wondersgroup.com.circleprogress.MainActivity">
@@ -78,6 +78,7 @@
             android:orientation="vertical"
             android:paddingBottom="10dp"
             android:paddingTop="10dp">
+
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -172,6 +173,51 @@
 
 
     </android.support.v7.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp">
+
+        <com.timqi.sectorprogressview.ColorfulRingProgressView
+            android:id="@+id/crpv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:bgColor="#e1e1e1"
+            app:fgColorEnd="#ff4800"
+            app:fgColorStart="#ffe400"
+            app:percent="75"
+            app:startAngle="0"
+            app:strokeWidth="21dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="75"
+                android:textColor="#000"
+                android:textSize="34sp"/>
+
+            <TextView
+                android:id="@+id/tvPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="良好"
+                android:textColor="#000"
+                android:textSize="34sp" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 
 
 </LinearLayout>

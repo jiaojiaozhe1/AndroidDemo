@@ -10,8 +10,11 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Explode;
+import android.transition.Fade;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -35,31 +38,25 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // set an enter transition
-//        getWindow().setEnterTransition(new Explode());
+//
         setContentView(R.layout.activity_main);
 
 //        imageView = (ImageView) findViewById(R.id.image_element);
 
+        Button contentBtn = (Button) findViewById(R.id.button_content_transition);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         adapter = new ElementShareAdapter(this);
         mRecyclerView.setAdapter(adapter);
 
+        contentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,SecondActivity.class));
+            }
+        });
 
-//        imageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-//// Pass data object in the bundle and populate details activity.
-////                intent.putExtra(DetailsActivity.EXTRA_CONTACT, contact);
-//                intent.putExtra("shared_element_transition_name",imageView.getTransitionName());
-//                ActivityOptionsCompat options = ActivityOptionsCompat.
-//                        makeSceneTransitionAnimation(MainActivity.this, imageView, imageView.getTransitionName());
-//                startActivity(intent, options.toBundle());
-//            }
-//        });
     }
 
 

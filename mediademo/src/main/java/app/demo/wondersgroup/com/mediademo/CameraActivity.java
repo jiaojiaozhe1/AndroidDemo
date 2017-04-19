@@ -3,6 +3,8 @@ package app.demo.wondersgroup.com.mediademo;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.ContentUris;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -23,7 +25,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class CameraActivity extends AppCompatActivity {
@@ -81,7 +86,7 @@ public class CameraActivity extends AppCompatActivity {
                     Log.e("Album", "我有权限啊");
                 }
 
-                Uri  uri = null;
+                Uri uri = null;
                 // 7.0 中的处理
                 if (Build.VERSION.SDK_INT >= 24) {
                     //FileProvider 将文件进行分装, 然后供外部应用（相机）访问提高了当前应用的安全性
@@ -119,7 +124,7 @@ public class CameraActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                    startPhotoZoom(Uri.fromFile(file), ALBUM_OK);
+                    startPhotoZoom(file, ALBUM_OK);
 
                 } else {
                     //4.4 之前版本号
@@ -135,12 +140,12 @@ public class CameraActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                    startPhotoZoom(Uri.fromFile(file), ALBUM_OK);
+                    startPhotoZoom(file, ALBUM_OK);
                 }
                 break;
             // 如果是调用相机拍照时
             case CAMERA_OK:
-                startPhotoZoom(Uri.fromFile(file), CAMERA_OK);
+                startPhotoZoom(file, CAMERA_OK);
                 break;
             // 取得裁剪后的图片，这里将其设置到imageview中
             case CUT_OK:
@@ -169,6 +174,10 @@ public class CameraActivity extends AppCompatActivity {
             if (pathUri != null) {
                 Bitmap bitmap = BitmapFactory.decodeStream(
                         getContentResolver().openInputStream(pathUri));
+
+                String path = saveBitmapByQuatity(bitmap, 80);
+
+                Log.e("setPicToView", "path ==" + path);
                 if (bitmap != null) {
 
                     img_album.setImageBitmap(bitmap);
@@ -180,13 +189,48 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     /**
+     * 对图片进行压缩
+     * @param bitmap
+     * @param quatity
+     * @return
+     */
+    private String saveBitmapByQuatity(Bitmap bitmap, int quatity) {
+        String cropPath = "";
+        cropPath = file.getPath();
+
+        if (file.exists()) {
+            file.delete();
+        }
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, quatity, fileOutputStream);
+            fileOutputStream.flush();
+            fileOutputStream.close();
+            ;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return cropPath;
+    }
+
+    /**
      * 裁剪图片
      *
-     * @param uri
+     * @param
      */
-    public void startPhotoZoom(Uri uri, int type) {
+    public void startPhotoZoom(File file, int type) {
         Intent intent = new Intent("com.android.camera.action.CROP");
-        intent.setDataAndType(uri, "image/*");
+        // 7.0 中的处理
+        if (Build.VERSION.SDK_INT >= 24) {
+
+            intent.setDataAndType(getImageContentUri(this, file), "image/*");
+        } else {
+            intent.setDataAndType(Uri.fromFile(file), "image/*");
+        }
+
+
         // 下面这个crop = true是设置在开启的Intent中设置显示的VIEW可裁剪
         intent.putExtra("crop", "true");
         // aspectX aspectY 是宽高的比例，这里设置的是正方形（长宽比为1:1）
@@ -216,8 +260,8 @@ public class CameraActivity extends AppCompatActivity {
          }
          */
 
-        pathUri = uri;
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        pathUri = Uri.fromFile(file);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, pathUri);
 
         intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
 
@@ -267,5 +311,31 @@ public class CameraActivity extends AppCompatActivity {
         return path;
     }
 
+    /**
+     * 7.0 获取图片Uri 处理
+     * @param context
+     * @param imageFile
+     * @return
+     */
+    public static Uri getImageContentUri(Context context, File imageFile) {
+        String filePath = imageFile.getAbsolutePath();
+        Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new String[]{MediaStore.Images.Media._ID},
+                MediaStore.Images.Media.DATA + "=?", new String[]{filePath}, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            int id = cursor.getInt(cursor.getColumnIndex(MediaStore.MediaColumns._ID));
+            Uri baseUri = Uri.parse("content://media/external/images/media");
+            return Uri.withAppendedPath(baseUri, "" + id);
+        } else {
+            if (imageFile.exists()) {
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(MediaStore.Images.Media.DATA, filePath);
+
+                return context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+            } else {
+                return null;
+            }
+        }
+    }
 
 }
