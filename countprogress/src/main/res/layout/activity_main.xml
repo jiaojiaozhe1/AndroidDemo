@@ -176,8 +176,8 @@
 
     <FrameLayout
         android:id="@+id/frame"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp">
 
@@ -190,7 +190,7 @@
             app:fgColorStart="#ffe400"
             app:percent="75"
             app:startAngle="0"
-            app:strokeWidth="21dp" />
+            app:strokeWidth="11dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -204,7 +204,7 @@
                 android:layout_height="wrap_content"
                 android:text="75"
                 android:textColor="#000"
-                android:textSize="34sp"/>
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/tvPercent"
@@ -212,7 +212,55 @@
                 android:layout_height="wrap_content"
                 android:text="良好"
                 android:textColor="#000"
-                android:textSize="34sp" />
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/bg_progress"
+        android:paddingBottom="12dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="12dp"
+        android:layout_marginTop="40dp">
+
+        <com.timqi.sectorprogressview.ColorfulRingProgressView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:bgColor="#e1e1e1"
+            app:fgColorEnd="#ff4800"
+            app:fgColorStart="#ffe400"
+            app:percent="75"
+            app:startAngle="0"
+            app:strokeWidth="10dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="75"
+                android:textColor="#000"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="良好"
+                android:textColor="#000"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
