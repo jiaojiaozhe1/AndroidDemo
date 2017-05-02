@@ -29,6 +29,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:cardview-v7:25.1.0'
-    compile 'com.timqi.sectorprogressview:library:2.0.0'
+    compile 'com.timqi.sectorprogressview:library:2.0.0' //渐变progress
     testCompile 'junit:junit:4.12'
 }
