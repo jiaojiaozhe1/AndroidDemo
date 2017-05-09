@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
@@ -106,12 +107,15 @@ public class LineChartActivity extends AppCompatActivity {
 
         lineChart.setData(lineData);  //填充数据
 
-        lineChart.getLegend().setEnabled(false); //设置标示，就是那个一组y的value的
+        //不显示描述信息
+        Legend mLegend = lineChart.getLegend();//设置标示，就是那个一组y的value的
 
-//        mLegend.setForm(Legend.LegendForm.CIRCLE); //样式
-//        mLegend.setFormSize(6f); //字体
-//        mLegend.setTextColor(Color.WHITE); //颜色
+        mLegend.setForm(Legend.LegendForm.CIRCLE); //样式
+        mLegend.setFormSize(6f); //字体
+        mLegend.setTextColor(Color.RED); //颜色
+        mLegend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
 
+        // 不显示Y轴左边和右边内容
         mChart.getAxisRight().setEnabled(false);
         mChart.getAxisLeft().setEnabled(false);
 
