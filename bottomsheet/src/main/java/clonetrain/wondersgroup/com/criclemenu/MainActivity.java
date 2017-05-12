@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottomSheets.setOnClickListener(this);
         button.setOnClickListener(this);
 
-//        添加滑动对底部tablayout 影藏和显示
+//        添加滑动对底部tablayout 隐藏和显示
         scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {

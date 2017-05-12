@@ -7,6 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/MPChartLib/MPChartLib.iml" filepath="$PROJECT_DIR$/MPChartLib/MPChartLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bottomsheet/bottomsheet.iml" filepath="$PROJECT_DIR$/bottomsheet/bottomsheet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calendar/calendar.iml" filepath="$PROJECT_DIR$/calendar/calendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calendardemo/calendardemo.iml" filepath="$PROJECT_DIR$/calendardemo/calendardemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/common_utils/common_utils.iml" filepath="$PROJECT_DIR$/common_utils/common_utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/countprogress/countprogress.iml" filepath="$PROJECT_DIR$/countprogress/countprogress.iml" />
       <module fileurl="file://$PROJECT_DIR$/elementtransition/elementtransition.iml" filepath="$PROJECT_DIR$/elementtransition/elementtransition.iml" />
