@@ -44,7 +44,7 @@ public class PopupMenuUtil {
     /**
      * 第一排图 距离屏幕底部的距离
      */
-//    int top = 0;
+    int top = 0;
     /**
      * 第二排图 距离屏幕底部的距离
      */
@@ -70,7 +70,7 @@ public class PopupMenuUtil {
         popupWindow.setOutsideTouchable(false);
 
         if (animatorProperty == null) {
-//            top = dip2px(context, 310);
+            top = dip2px(context, 310);
             bottom = dip2px(context, 210);
             animatorProperty = new float[]{bottom, 60, -30, -20 - 10, 0};
         }
@@ -96,10 +96,10 @@ public class PopupMenuUtil {
     private void initLayout(Context context) {
 //        rlClick = (RelativeLayout) rootVew.findViewById(R.id.pop_rl_click);
         ivBtn = (ImageView) rootVew.findViewById(R.id.pop_iv_img);
-//        llTest1 = (LinearLayout) rootVew.findViewById(R.id.test1);
-//        llTest2 = (LinearLayout) rootVew.findViewById(R.id.test2);
-//        llTest3 = (LinearLayout) rootVew.findViewById(R.id.test3);
-//        llTest4 = (LinearLayout) rootVew.findViewById(R.id.test4);
+        llTest1 = (LinearLayout) rootVew.findViewById(R.id.test1);
+        llTest2 = (LinearLayout) rootVew.findViewById(R.id.test2);
+        llTest3 = (LinearLayout) rootVew.findViewById(R.id.test3);
+        llTest4 = (LinearLayout) rootVew.findViewById(R.id.test4);
 
         llTest5 = (LinearLayout) rootVew.findViewById(R.id.test5);
         llTest6 = (LinearLayout) rootVew.findViewById(R.id.test6);
@@ -108,10 +108,10 @@ public class PopupMenuUtil {
 
         ivBtn.setOnClickListener(new MViewClick(0, context));
 
-//        llTest1.setOnClickListener(new MViewClick(1, context));
-//        llTest2.setOnClickListener(new MViewClick(2, context));
-//        llTest3.setOnClickListener(new MViewClick(3, context));
-//        llTest4.setOnClickListener(new MViewClick(4, context));
+        llTest1.setOnClickListener(new MViewClick(1, context));
+        llTest2.setOnClickListener(new MViewClick(2, context));
+        llTest3.setOnClickListener(new MViewClick(3, context));
+        llTest4.setOnClickListener(new MViewClick(4, context));
 
         llTest5.setOnClickListener(new MViewClick(5, context));
         llTest6.setOnClickListener(new MViewClick(6, context));
@@ -168,11 +168,12 @@ public class PopupMenuUtil {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(ivBtn, "rotation", 0f, 135f);
         objectAnimator.setDuration(200);
         objectAnimator.start();
-//
-//        _startAnimation(llTest1, 200, animatorProperty);
-//        _startAnimation(llTest2, 300, animatorProperty);
-//        _startAnimation(llTest3, 400, animatorProperty);
-//        _startAnimation(llTest4, 500, animatorProperty);
+
+        _startAnimation(llTest1, 200, animatorProperty);
+        _startAnimation(llTest2, 300, animatorProperty);
+        _startAnimation(llTest3, 400, animatorProperty);
+        _startAnimation(llTest4, 500, animatorProperty);
+
 
         //第二个参数duration 来决定动画的执行 当前的是 imageview 出来的顺序是先后一个一个出现
         _startAnimation(llTest5, 200, animatorProperty);
@@ -193,10 +194,10 @@ public class PopupMenuUtil {
             objectAnimator.setDuration(300);
             objectAnimator.start();
 //
-//            _closeAnimation(llTest1, 500, bottom);
-//            _closeAnimation(llTest2, 400, bottom);
-//            _closeAnimation(llTest3, 300, bottom);
-//            _closeAnimation(llTest4, 200, bottom);
+            _closeAnimation(llTest1, 500, bottom);
+            _closeAnimation(llTest2, 400, bottom);
+            _closeAnimation(llTest3, 300, bottom);
+            _closeAnimation(llTest4, 200, bottom);
 
             _closeAnimation(llTest5, 500, bottom);
             _closeAnimation(llTest6, 400, bottom);
